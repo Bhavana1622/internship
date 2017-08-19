@@ -10,7 +10,7 @@
         var lat = position.coords.latitude;
         var lon = position.coords.longitude;
 
-        $http.jsonp("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID=a8f5261ee6863849df5a45497bb27163&callback=JSON_CALLBACK").
+        $http.jsonp("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID=a8f5261ee6863849df5a45497bb27163&callback=JSON_CALLBACK").
         success(function(data){
           $scope.weatherData = data;
           console.log(data);
@@ -29,7 +29,7 @@
     $scope.refresh = function(){
       $('.loading').show();
       if($scope.location != ''){ 
-        $http.jsonp("http://api.openweathermap.org/data/2.5/weather?q="+$scope.location+"&APPID=b6c4e6cac17262ae28445590744a99c7&callback=JSON_CALLBACK").
+        $http.jsonp("https://api.openweathermap.org/data/2.5/weather?q="+$scope.location+"&APPID=b6c4e6cac17262ae28445590744a99c7&callback=JSON_CALLBACK").
           success(function(data){
             $scope.weatherData = data;
             console.log(data);
